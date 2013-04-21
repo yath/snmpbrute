@@ -50,7 +50,7 @@ sub get_snmp_request_id {
     my ($community) = @_;
     while(1) {
         my $rid = int rand(2**31);
-        if (exists $rids{$rid} && $rids{$rid}->timeout < time) {
+        if (exists $rids{$rid} && $rids{$rid}->{timeout} < time) {
             next;
         }
         $rids{$rid} = [$community, time+$options{timeout}];
