@@ -1,4 +1,4 @@
-A fast SNMP scanner, inspired by snmp-brute.nse.
+A fast SNMP community string scanner, inspired by snmp-brute.nse.
 Bulk-sends SNMP requests, listening for replies via libpcap.
 
 For educational use only.
