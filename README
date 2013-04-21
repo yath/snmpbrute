@@ -1,0 +1,27 @@
+A fast SNMP scanner, inspired by snmp-brute.nse.
+Bulk-sends SNMP requests, listening for replies via libpcap.
+
+For educational use only.
+
+Usage: snmpbrute.pl -i <interface> -h <host> -l <community file> [-o oid[,oid[,oid]]]
+          [-O <offset>] [-d delay] [-p port] [-s snaplen] [-p] [-t timeout]
+
+    -o Comma-separated list of OIDs to try (fully numeric, no MIBs)
+       Defaults to .1.3.6.1.2.1.1.1.0,.1.3.6.1.2.1.1.3.0
+
+    -O Payload offset (e.g. size of ethernet+ip+udp header)
+       Defaults to 42
+
+    -d Delay in miliseconds between each GetRequest
+       Defaults to 10
+
+    -p Port, if different than 161
+
+    -s Bytes to capture with libpcap
+       Defaults to 1024
+
+    -P If set, put device into promiscous mode
+
+    -t Maximum time to wait for an SNMP reply in seconds
+       Defaults to 5
+       Note: That doesn't make the scanning slower, just uses more memory.
